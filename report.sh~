@@ -17,7 +17,7 @@ fi
 
 # hash is 40 chars + 3 for underscore and two digit hour
 header="hash,name,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23"
-if ${showheader}; then 
+if [ ${showheader} ]; then 
   echo "${header}"
 fi
 for torrent in $(${binfolder}rtcontrol -qo hash,name is_complete=yes alias="${trackeralias}"); do
