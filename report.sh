@@ -39,7 +39,7 @@ for torrent in $(${binfolder}rtcontrol -qo hash,name is_complete=yes alias="${tr
       hourdiff=$(expr ${hourdata} - ${lownumber})
     fi
     lownumber=${hourdata}
-    hourdiffmegs=$(( hourdiff / 1048576 ))
+    hourdiffmegs=$(echo "scale=2; ${hourdiff} / 1048576" | bc )
     if [[ "${counter}" == "0" ]]; then
       hourseries=${hourdiffmegs}
     else
